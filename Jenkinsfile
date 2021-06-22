@@ -9,7 +9,7 @@ pipeline {
                     jsonobj = readJSON text: "${response.content}"
                     echo "${jsonobj.size()}"
                     jsonobj.items.each {
-                        echo "${item.state}"
+                        echo "${it.state}"
                     }
                 }
             }
