@@ -12,7 +12,7 @@ pipeline {
                         // echo "${it}"
                         def PR1 = "${it}"
                         it.each
-                            echo "${it}"
+                            //echo "${it}"
                             if(it.state == "open") {
                             echo "${it.title}"
                         }
