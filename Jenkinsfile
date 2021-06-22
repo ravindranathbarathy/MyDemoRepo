@@ -7,7 +7,6 @@ pipeline {
                 Response = httpRequest consoleLogResponseBody: true, responseHandle: 'NONE', url: 'https://api.github.com/repos/jenkinsci/jenkins/pulls', wrapAsMultipart: false
                 echo "${Response}"
             }
-            }
         }
         stage('Test') {
             steps {
