@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'env'
+                sh "Running under $STAGE_NAME"
             }
         }
         stage('Test') {
             steps {
-                sh 'echo test'
+                sh "Running under $STAGE_NAME"
             }
         }
         stage('Deliver') {
             steps {
-                sh 'echo deliver'
+                sh "Running under $STAGE_NAME"
             }
         }
     }      
