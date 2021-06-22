@@ -14,7 +14,7 @@ pipeline {
                         it.each
                             echo "${it}"
                             if(it.state == "open") {
-                            echo "${PR1.title}"
+                            echo "${it.title}"
                         }
                     }
                 }
