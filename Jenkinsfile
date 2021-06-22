@@ -3,9 +3,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "echo Running under $STAGE_NAME"
-                def response = httpRequest 'http://localhost:8080/jenkins/api/json?pretty=true'
-                echo "${res}"
+                script {
+                    sh "echo Running under $STAGE_NAME"
+                    def response = httpRequest 'http://localhost:8080/jenkins/api/json?pretty=true'
+                    echo "${res}"
+                }
             }
         }
         stage('Test') {
