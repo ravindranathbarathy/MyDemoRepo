@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh "echo Running under $STAGE_NAME"
-                def response = httpRequest consoleLogResponseBody: true, responseHandle: 'NONE', url: 'https://api.github.com/repos/jenkinsci/jenkins/pulls', wrapAsMultipart: false
+                def response = httpRequest url: "https://api.github.com/repos/jenkinsci/jenkins/pulls"
                 echo "${response}"
             }
         }
