@@ -8,7 +8,7 @@ pipeline {
                     def response = httpRequest 'https://api.github.com/repos/jenkinsci/jenkins/pulls'
                     jsonobj = readJSON text: "${response.content}"
                     echo "${jsonobj.size()}"
-                    jsonobj.items.each {
+                    jsonobj.each {
                         echo "${it}"
                     }
                 }
