@@ -6,7 +6,6 @@ pipeline {
                 script {
                     sh "echo Running under $STAGE_NAME"
                     def response = httpRequest 'https://api.github.com/repos/jenkinsci/jenkins/pulls'
-                    echo "${response.content}"
                     jsonobj = readJSON text: "${response.content}"
                     echo "${jsonobj}"
                 }
