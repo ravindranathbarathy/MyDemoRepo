@@ -10,6 +10,11 @@ pipeline {
                     echo "${jsonobj.size()}"
                     jsonobj.each {
                         echo "${it}"
+                        def PR1 = "${it}"
+                        it.items.each 
+                            if(it.state == "open") {
+                            echo "${PR1.title}"
+                        }
                     }
                 }
             }
