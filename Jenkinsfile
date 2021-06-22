@@ -11,7 +11,7 @@ pipeline {
                     jsonobj.each {
                         // echo "${it}"
                         def PR1 = "${it}"
-                        it.items.each
+                        it.each
                             echo "${it}"
                             if(it.state == "open") {
                             echo "${PR1.title}"
